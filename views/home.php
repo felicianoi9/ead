@@ -1,10 +1,2 @@
-<h1>Algum codigo HTML </h1>
+<h1>Algum codigo HTML página Home </h1>
 
-<?php
-foreach ($fotos as $foto) {
-	echo "Título: ".$foto['titulo']."  -  ".$foto['url']."<br/>" ;
-}
-
-
-
-?>

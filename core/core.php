@@ -2,10 +2,7 @@
 
 class core{
 	
-	public function teste(){
-		echo "Teste core";
-	}
-
+	
 	public function run(){
 		//$url=substr($_SERVER['PHP_SELF'],14);
 		$url = explode("index.php", $_SERVER['PHP_SELF']);
@@ -17,7 +14,7 @@ class core{
 			$url=explode('/',$url);
 			array_shift($url);
 			
-			$currentController = $url[0].'controller';
+			$currentController = $url[0].'Controller';
 			array_shift($url);
 
 			if(isset($url[0])){
@@ -43,6 +40,8 @@ class core{
 		require_once 'core/controller.php';
 
 		$c = new $currentController();
+
+		
 		call_user_func_array(array($c,$currentAction), $params);
 	}
 

@@ -7,9 +7,9 @@
 	</head>
 	<body>
 		<h1>Topo do Site</h1>
-			<?php   $this->loadViewInTemplate($viewsName,$viewsData)  ?>
-			....
-			....
+
+		<?php  $this->loadViewInTemplate($viewsName,$viewsData );?>
+			
 
 		<h1>rodapé dosite</h1>
 

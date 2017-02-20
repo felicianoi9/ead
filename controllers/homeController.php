@@ -1,20 +1,27 @@
 <?php
 class homeController extends controller{
 
-	
+	public function __construct(){
+		parent::__construct();
+
+		$alunos = new alunos();
+
+		if(!$alunos->isLogged()){
+			header("Location:".BASE_URL."login");
+		}
+	}
 	
 	public function index(){
-		$fotos = new fotos();
-		$dados['fotos']=$fotos->getFotos();
+		
+		$dados=array();
+
+		
 		
 		$this->loadTemplate('home', $dados);
 
 		
 	}
 
-	public function sobre(){
-		$dados = array();
-		$this->loadTemplate('sobre',$dados);
-	}
+	
 
 }

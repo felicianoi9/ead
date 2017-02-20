@@ -1,0 +1,63 @@
+#Parte 1 de 16
+1-Criçao do Banco de Dados
+Tabelas:
+*Cursos:
+-id
+-nome
+-imagem
+-descrição
+
+*Alunos:
+-id
+-nome
+-email
+-senha
+
+*Aluno_Curso:
+-id
+-id_curso
+-id_aluno
+
+*Modulos:
+-id
+-nome
+-id_curso
+
+*Aulas:
+-id
+-id_modulo
+-id_curso
+-tipo
+-ordem
+
+*Videos:
+-id
+-id_aula
+-nome
+-descrição
+-url
+
+*Histórico:
+-id
+-data
+-id_aluno
+-id_aula
+
+*Questionario:
+-id
+-id_aula
+-pergunta
+-opção1
+-opção2
+-opção3
+-opção4
+-opção5
+-resposta
+(Feito - tabelas Criadas)
+
+#Parte 2 de 16
+1-classe loginController
+2-View login.php
+3-adaptação da index.php ( session_start() )
+4-inclusão de um aluno no banco de dados  (tabela alunos )
+

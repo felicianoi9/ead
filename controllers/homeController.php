@@ -13,9 +13,21 @@ class homeController extends controller{
 	
 	public function index(){
 		
-		$dados=array();
+		$dados=array(
+			'info'=>array(),
+			'cursos'=>array()
 
-		
+			);
+
+		$alunos = new alunos();
+
+		$alunos->setAluno($_SESSION['lgaluno']);
+
+		$dados['info']= $alunos;
+
+		$cursos= new cursos();
+
+		$dados['cursos'] = $cursos->getCursosDoAluno($alunos->getID());  
 		
 		$this->loadTemplate('home', $dados);
 

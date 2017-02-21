@@ -10,9 +10,9 @@ if(ENVIRONMENT=="development"){
 	$config['dbuser']='root';
 	$config['dbpass']='';
 }else{
-	$config['dbname']='felician_mvc';
+	$config['dbname']='felician_ead';
 	$config['host']='127.0.0.1';
-	$config['dbuser']='felician_usermvc';
-	$config['dbpass']='t=cz-@T6hKW?';
+	$config['dbuser']='felician_useread';
+	$config['dbpass']='PAG3B4-Ee#VN';
 
 }

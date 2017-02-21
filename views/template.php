@@ -1,17 +1,25 @@
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Titulo da pagina</title>
 		
 		<link type="text/css" href="<?php echo BASE_URL; ?>/assets/css/style.css" rel="stylesheet" />
 
 	</head>
 	<body>
-		<h1>Topo do Site</h1>
+		<div class="topo" >
+			<a href="<?php echo BASE_URL;?>login/logout" ><div> Sair </div> </a>
+			
+			<div class="topousuario"><?php echo $viewsData['info']->getNome(); ?></div>
+			
+		
+		</div>
+		
 
 		<?php  $this->loadViewInTemplate($viewsName,$viewsData );?>
 			
 
-		<h1>rodapé dosite</h1>
+		
 
 	</body>
 

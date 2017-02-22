@@ -1,5 +1,6 @@
 <?php
 class cursos extends model{
+	private $info;
 
 	public function getCursosDoAluno($id){
 		$array = array();
@@ -25,6 +26,33 @@ class cursos extends model{
 
 	return $array;	
 
+	}
+
+	public function setCurso($id){
+
+		$sql = "SELECT * FROM cursos WHERE id='$id' ";
+		$sql = $this->db->query($sql);
+
+		if($sql->rowCount()>0){
+			$this->info = $sql->fetchAll();
+
+
+		}
+
+		
+
+	}
+
+	public function getNome(){
+		return $this->info[0]['nome'];
+	}
+
+	public function getImagem(){
+		return $this->info[0]['imagem'];
+	}
+
+	public function getDescricao(){
+		return $this->info[0]['descricao'];
 	}
 }
 

@@ -26,6 +26,19 @@ class alunos extends model{
 
 	}
 
+	public function isInscrito($id_curso){
+		$sql ="SELECT * FROM aluno_curso WHERE id_aluno='".($this->info['id'])."'  AND id_curso='$id_curso' ";
+		$sql=$this->db->query($sql);
+		if($sql->rowCount()>0){
+			return true;
+		}else{
+			return false;
+		}
+
+
+
+	}
+
 	public function setAluno($id){
 
 		$sql = "SELECT * FROM alunos WHERE id='$id' ";

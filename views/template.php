@@ -3,7 +3,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Titulo da pagina</title>
 		
-		<link type="text/css" href="<?php echo BASE_URL; ?>/assets/css/style.css" rel="stylesheet" />
+		<link type="text/css" href="<?php echo BASE_URL; ?>assets/css/style.css" rel="stylesheet" />
+		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/jquery-3.1.0.min.js" ></script>
+		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/script.js" ></script>
 
 	</head>
 	<body>

@@ -3,7 +3,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Página de Login</title>
 
-		<link rel="stylesheet"  href="assets/css/style-login.css" />
+		<link rel="stylesheet"  href="<?php echo BASE_URL; ?>assets/css/style-login.css" />
 	</head>
 	<body>
 		<div id="login">

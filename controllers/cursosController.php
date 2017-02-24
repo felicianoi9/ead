@@ -20,7 +20,7 @@ class cursosController extends controller{
 		$dados=array(
 			'info'=>array(),
 			'curso'=>array(),
-			'aulas'=>array()
+			'modulos'=>array()
 
 			);
 		$alunos=new alunos();
@@ -32,6 +32,9 @@ class cursosController extends controller{
 			$curso=new cursos();
 			$curso->setCurso($id);
 			$dados['curso']=$curso;
+
+			$modulos = new modulos();
+			$dados['modulos']=$modulos->getModulos($id);
 			
 			$this->loadTemplate('curso_entrar',$dados);
 		}else{

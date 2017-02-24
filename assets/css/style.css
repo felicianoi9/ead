@@ -1,8 +1,10 @@
 body{
 	margin: 0;
 	background-color: #eee;
+	font-family: arial;
 	
 }
+
 .topo{
 	height: 40px;
 	background-color: #333;
@@ -76,6 +78,10 @@ img{
 	border: 1px solid;
 	overflow-y: scroll;
 }
+.curso_left a{
+	color: #000;
+	text-decoration: none;
+}
 .curso_right{
 	width: 70%;
 	min-height: 300px;
@@ -83,4 +89,21 @@ img{
 	background-color: #aaa;
 	border: 1px solid;
 	overflow-y: scroll;
+}
+.modulo{
+	height: 30px;
+	line-height: 30px;
+	padding-left: 20px;
+	background-color: #ccc;
+}
+.aula{
+	height: 30px;
+	line-height: 30px;
+	padding-left: 30px;
+	
+
+}
+.aula:hover{
+	background-color: #aaa;
+
 }

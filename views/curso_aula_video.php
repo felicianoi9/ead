@@ -18,4 +18,15 @@
 </div>
 
 <div class="curso_right" >
+
+<h1>Vídeos - <?php echo $aula_info['nome'];?></h1>
+<iframe id="video" style="width: 100%" frameborder="0" src="//player.vimeo.com/video/<?php echo $aula_info['url'];?>"></iframe><br/>
+<?php echo $aula_info['descricao'];?><br/>
+<hr/>
+<h3>Dúvidas? Envia sua pergunta!</h3>
+<form method="POST" class="form_duvida">
+	<textarea name="duvida" ></textarea><br/><br/>
+	<input type="submit" value="Enviar Dúvida"  />
+</form>
+
 </div>

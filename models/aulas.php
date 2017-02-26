@@ -34,6 +34,62 @@ class aulas extends model{
 		return $array;
 
 	}
+
+	public function getCursoDeAula($id_aula){
+
+		$sql = "SELECT id_curso FROM aulas WHERE id='$id_aula' ";
+		$sql = $this->db->query($sql);
+
+		if($sql->rowCount()>0){
+
+			$row=$sql->fetch();
+			return $row['id_curso'];
+
+		}else{
+			return 0;
+		}
+
+	}
+
+	public function getAula($id_aula){
+		$array=array();
+		$sql= "SELECT tipo FROM aulas WHERE id='$id_aula' ";
+		$sql=$this->db->query($sql);
+
+		if($sql->rowCount()>0){
+
+			$row=$sql->fetch();
+			
+			if($row['tipo']=='video'){
+
+				$sql = "SELECT * FROM videos WHERE id='$id_aula' ";
+				$sql = $this->db->query($sql);
+
+				$array= $sql->fetch();
+				$array['tipo']='video';
+
+			}elseif($row['tipo']=='poll'){
+
+				$sql = "SELECT * FROM questionario WHERE id='$id_aula' ";
+				$sql = $this->db->query($sql);
+
+				$array= $sql->fetch();
+				$array['tipo']='poll';
+			}
+
+		}
+
+
+		return $array;
+	}
+
+	public function setDuvida($duvida, $aluno){
+
+		$sql ="INSERT INTO duvidas SET data_duvida=NOW() , duvida='$duvida', id_aluno='$aluno'  ";
+		$this->db->query($sql);
+
+	}
+
 }
 
 

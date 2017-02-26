@@ -1,7 +1,7 @@
 <?php header("Content-Type: text/html; charset=ISO-8859-1",true);?>
 <html>
 	<head>
-		<meta charset="UTF-8"  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Titulo da pagina</title>
 		
 		<link type="text/css" href="<?php echo BASE_URL; ?>assets/css/style.css" rel="stylesheet" />

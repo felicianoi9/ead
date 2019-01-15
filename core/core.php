@@ -1,48 +1,64 @@
 <?php
+class Core{
 
-class core{
-	
-	
 	public function run(){
-		//$url=substr($_SERVER['PHP_SELF'],14);
-		$url = explode("index.php", $_SERVER['PHP_SELF']);
-		$url = end($url);
+
+		$url = '/';
 
 		$params = array();
 
-		if(!empty($url)){
-			$url=explode('/',$url);
-			array_shift($url);
-			
-			$currentController = $url[0].'Controller';
+		if(isset($_GET['url'])){
+			$url.=$_GET['url'];
+		}
+
+		if (!empty($url) && $url!='/'){
+
+			$url = explode('/',$url);
+
+			array_shift($url);			
+
+			$currentController =$url[0].'Controller';
+
 			array_shift($url);
 
-			if(isset($url[0])){
-				$currentAction=$url[0];
+			if(isset($url[0]) && $url != '/'){
+
+				$currentAction = $url[0];
 				array_shift($url);
 
 			}else{
-				$currentAction="index";
 
+				$currentAction = 'index';
 			}
 
-			if(Count($url)>0){
-				$params = $url;
+			if(count($url)){
+				$params=$url;
 			}
-
 		}else{
-			$currentController= 'homeController';
-			$currentAction ='index';
 
+			$currentController =  'homeController';
+			$currentAction = 'index';
 		}
-
-		
-		require_once 'core/controller.php';
-
+		if(!file_exists('controllers/'.$currentController.'.php') || !method_exists($currentController, $currentAction)){
+			$p = new Pages();
+			
+			$name = explode('Controller', $currentController);
+			$page = $p->existPage($name[0], 'Controller');
+			
+			if( $page == 0){
+				$currentController='notfoundController';
+				$currentAction = 'index';
+			}else{
+								
+				$currentController='pagesController';
+				$currentAction = 'index';
+				$params = array($name[0]);	
+			} 				
+		}
 		$c = new $currentController();
-
 		
-		call_user_func_array(array($c,$currentAction), $params);
-	}
+		call_user_func_array( array($c, $currentAction), $params);
 
+			
+	}
 }
